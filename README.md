@@ -44,39 +44,39 @@ Solution Steps:
 
 Pseudocode:
 
-SET round to 0
-SET humanScore to 0
-SET computerScore to 0
-CALL playGame with 5 rounds
-    WHILE round < 5
-        CALL getHumanChoice
-            GET user input (Rock, Paper, and Scissors)
-        CALL getComputerChoice
-            DETERMINE Math.random {0, 1, 2}
-                IF Math.random === 0
-                    GET "rock"
-                ELSE IF Math.random === 1
-                    GET "paper"
-                ELSE IF Math.random === 2
-                    GET "scissors"
-                ENDIF
-        CALL playRound with the arguments of getHumanChoice and getComputerChoice
-            IF getHumanChoice === getComputerChoice
-                RETURN
-            ELSE IF getHumanChoice === "paper" AND getComputerChoice === "rock"
-                INCREMENT humanScore
-            ELSE IF getHumanChoice === "scissors" AND getComputerChoice === "paper"
-                INCREMENT humanScore
-            ELSE IF getHumanChoice === "rock" AND getComputerChoice === "scissors"
-                INCREMENT humanScore
-            ELSE
-                INCREMENT computerScore
-            INCREMENT round
-    ENDWHILE
-IF humanScore > computerScore
-    PRINT "Human Wins!"
-ELSE
-    PRINT "Computer Wins!"
-ENDIF
+    SET round to 0
+    SET humanScore to 0
+    SET computerScore to 0
+    CALL playGame with 5 rounds
+        WHILE round < 5
+            CALL getHumanChoice
+                GET user input (Rock, Paper, and Scissors)
+            CALL getComputerChoice
+                DETERMINE Math.random {0, 1, 2}
+                    IF Math.random === 0
+                        GET "rock"
+                    ELSE IF Math.random === 1
+                        GET "paper"
+                    ELSE IF Math.random === 2
+                        GET "scissors"
+                    ENDIF
+            CALL playRound with the arguments of getHumanChoice and getComputerChoice
+                IF getHumanChoice === getComputerChoice
+                    RETURN
+                ELSE IF getHumanChoice === "paper" AND getComputerChoice === "rock"
+                    INCREMENT humanScore
+                ELSE IF getHumanChoice === "scissors" AND getComputerChoice === "paper"
+                    INCREMENT humanScore
+                ELSE IF getHumanChoice === "rock" AND getComputerChoice === "scissors"
+                    INCREMENT humanScore
+                ELSE
+                    INCREMENT computerScore
+                INCREMENT round
+        ENDWHILE
+    IF humanScore > computerScore
+        PRINT "Human Wins!"
+    ELSE
+        PRINT "Computer Wins!"
+    ENDIF
 
 
