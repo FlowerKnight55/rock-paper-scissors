@@ -56,7 +56,7 @@ function playRound(humanChoice, computerChoice){
         computerScore++;
         console.log("Computer wins this round!")
     }
-
+    console.log("Human Score: " + humanScore + " - " + "Computer Score: " + computerScore);
     console.log("");
 }
 
@@ -72,12 +72,12 @@ function playGame(currentRound){
 
 playGame(5);
 
-console.log("");
-
+console.log("Final Score: ");
+console.log("Human Score: " + humanScore + " - " + "Computer Score: " + computerScore);
 //Decides who is the winner at the end of the 5 rounds
 if(humanScore > computerScore){
     console.log("Human Wins!");
 }
 else{
-    console.log("Computer Wins");
+    console.log("Computer Wins!");
 }
