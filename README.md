@@ -75,8 +75,6 @@ CALL playGame with 5 rounds
                 INCREMENT computerScore
             INCREMENT round
     ENDWHILE
-
-    
 IF humanScore > computerScore
     PRINT "Human Wins!"
 ELSE
