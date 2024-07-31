@@ -51,7 +51,6 @@ CALL playGame with 5 rounds
     WHILE round < 5
         CALL getHumanChoice
             GET user input (Rock, Paper, and Scissors)
-        
         CALL getComputerChoice
             DETERMINE Math.random {0, 1, 2}
                 IF Math.random === 0
@@ -62,7 +61,6 @@ CALL playGame with 5 rounds
                     GET "scissors"
                 ENDIF
         CALL playRound with the arguments of getHumanChoice and getComputerChoice
-            
             IF getHumanChoice === getComputerChoice
                 RETURN
             ELSE IF getHumanChoice === "paper" AND getComputerChoice === "rock"
