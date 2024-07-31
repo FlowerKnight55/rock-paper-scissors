@@ -5,7 +5,7 @@ let computerScore = 0;
 
 //User inputs choices between Rock, Paper, and Scissors
 function getHumanChoice(){
-    return prompt("Enter choice");
+    return prompt("Enter choice (Rock, Paper, or Scissors)");
 }
 
 
@@ -34,9 +34,8 @@ function getComputerChoice(){
 function playRound(humanChoice, computerChoice){
 
     
-    console.log("round" + (round + 1));
-    console.log(humanChoice.chartAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase() + " " + computerChoice);
-    
+    console.log("Round " + (round + 1));
+    console.log(humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase() + " vs " + computerChoice);
     //Decides who wins the round
     if(humanChoice.toLowerCase() === computerChoice.toLowerCase()){
         console.log("It's a draw!")
@@ -57,6 +56,8 @@ function playRound(humanChoice, computerChoice){
         computerScore++;
         console.log("Computer wins this round!")
     }
+
+    console.log("");
 }
 
 //Play a game for 5 rounds
@@ -70,6 +71,8 @@ function playGame(currentRound){
 
 
 playGame(5);
+
+console.log("");
 
 //Decides who is the winner at the end of the 5 rounds
 if(humanScore > computerScore){
