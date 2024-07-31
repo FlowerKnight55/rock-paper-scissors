@@ -72,13 +72,85 @@ CALL playGame with 5 rounds
             INCREMENT round
     ENDWHILE
 
-    IF humanScore > computerScore
-        PRINT "Human Wins!"
-    ELSE
-        PRINT "Computer Wins!"
-
-
-
+    
+IF humanScore > computerScore
+    PRINT "Human Wins!"
+ELSE
+    PRINT "Computer Wins!"
+ENDIF
 
 
 */
+
+
+let round = 0;
+let humanScore = 0;
+let computerScore = 0;
+
+
+
+function getHumanChoice(){
+    return prompt("Enter choice");
+}
+
+function getComputerChoice(){
+    let value = Math.floor(Math.random() * 2);
+
+    switch(value){
+        case 0:
+            return "Rock";
+            break;
+        case 1:
+            return "Paper";
+            break;
+        default:
+            return "Scissors";
+        
+    }
+    
+}
+
+function playRound(humanChoice, computerChoice){
+
+    
+    console.log("round" + (round + 1));
+    console.log(humanChoice.chartAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase() + " " + computerChoice);
+
+    if(humanChoice.toLowerCase() === computerChoice.toLowerCase()){
+        console.log("It's a draw!")
+    }
+    else if(humanChoice.toLowerCase() === "paper" && computerChoice.toLowerCase() === "rock"){
+        humanScore++;
+        console.log("Human wins this round!")
+    }
+    else if(humanChoice.toLowerCase() === "scissors" && computerChoice.toLowerCase() === "paper"){
+        humanScore++;
+        console.log("Human wins this round!");
+    }
+    else if(humanChoice.toLowerCase() === "rock" && computerChoice.toLowerCase() === "scissors"){
+        humanScore++;
+        console.log("Human wins this round!")
+    }
+    else{
+        computerScore++;
+        console.log("Computer wins this round!")
+    }
+}
+
+function playGame(currentRound){
+    while(round < currentRound){
+        playRound(getHumanChoice(), getComputerChoice());
+        round++;
+    }
+}
+
+
+
+playGame(5);
+
+if(humanScore > computerScore){
+    console.log("Human Wins!");
+}
+else{
+    console.log("Computer Wins");
+}
