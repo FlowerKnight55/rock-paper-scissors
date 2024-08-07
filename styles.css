@@ -2,6 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Reem Kufi Ink", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+
 }
 
 
@@ -16,20 +21,52 @@
 
 /* Appearance */
 
-.preview-img .human-illus, .computer-illus{
-    border: solid;
-    border-color: black;
+html{
+    background-color: #131626;
 }
 
 
+.preview-img .human-illus, .computer-illus{
+    border: solid;
+    border-color: white;
+    background-color: #222736;
+}
+
+button{
+    padding: 10px 60px;
+    width: 170px;
+    border-radius: 20px;
+    border-style: solid;
+}
+
+.rock{
+    background-color: #bea68b;
+    border-color: #7f6a5a;
+    
+
+}
+
+.paper{
+    background-color: #b57d5d;
+    border: #d3a56e;
+    
+}
 
 
+.scissors{
+    background-color: #e3a360;
+    border-color: #d87a37;
+}
 
 
-
-
-
-
+.proceed-button{
+    background-color: #222736;
+    padding: 10px 0;
+    font-size: 15px;
+    white-space: nowrap;
+    border-color: white;
+    
+}
 
 
 /* Layout */
@@ -45,15 +82,23 @@
 .scoreboard-section .container{
     display:flex;
     flex-direction: column;
+    justify-content: space-around;
     width: 500px;
-    height: 500px;
+    height: 350px;
     
 }
 
+
 .score{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 30px;
 }
+
+.winner-text, .round-text{
+    align-self: center;
+}
+
 
 
 
@@ -61,27 +106,39 @@
     display: flex;
     justify-content: space-between;
     width: auto;
-    height:450px;
-    align-items: center;
     
 }
+
 
 .preview-img .human-illus, .computer-illus{
     height: 180px;
     width: 180px;
 }
 
+.vs-container{
+    display: flex;
+    align-items: center;
+}
 
+.vs-text{
+    
+    height: 80px;
+    font-size: 50px
+}
 
 
 .gameplay-section .container{
     display:flex;
     justify-content: center;
-    
+    padding-top: 20px;
 }
-
-
-    
+ 
+.proceed-section .container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    padding-right: 150px;
+}
 
 
 
