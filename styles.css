@@ -128,6 +128,16 @@ button{
     width: 180px;
 }
 
+.human-illus{
+    height: 180px;
+    width: 180px;
+}
+
+.computer-illus{
+    height: 180px;
+    width: 180px;
+}
+
 .img-info{
     display: flex;
     flex-direction: column;
