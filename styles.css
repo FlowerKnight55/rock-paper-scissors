@@ -25,12 +25,20 @@ html{
     background-color: #131626;
 }
 
+.game-title{
+    border-style: dashed;
+    padding: 10px;
+}
+
+
 
 .preview-img .human-illus, .computer-illus{
     border: solid;
     border-color: white;
     background-color: #222736;
 }
+
+
 
 .vs-text{
     font-size: 50px
@@ -47,8 +55,6 @@ button{
 .rock{
     background-color: #bea68b;
     border-color: #7f6a5a;
-    
-
 }
 
 .paper{
