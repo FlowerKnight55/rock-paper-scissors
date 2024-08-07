@@ -32,7 +32,7 @@ html{
 
 
 
-.preview-img .human-illus, .computer-illus{
+.preview-img .border{
     border: solid;
     border-color: white;
     background-color: #222736;
@@ -123,7 +123,7 @@ button{
 }
 
 
-.preview-img .human-illus, .computer-illus{
+.preview-img .border{
     height: 180px;
     width: 180px;
 }
