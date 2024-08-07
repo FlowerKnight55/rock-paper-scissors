@@ -3,31 +3,44 @@
 <html>
     <head lang="en">
         <meta charset="utf">
-        <title>Rock, Paper, and Scissors</title>
+        <title>Rock, Paper, Scissors</title>
         <!-- <script src="script.js"></script> -->
         <link rel="stylesheet" href="styles.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap" rel="stylesheet">
     </head>
 
     <body>
 
         <header class="header-section">
             <div class="container">
-                <h1>Rock, Paper, and Scissors</h1>
+                <h1>Rock, Paper, Scissors</h1>
             </div>
         </header>
 
         <section class="scoreboard-section">
             <div class="container">
                 
+                <h2 class="round-text">Round: 1</h2>
+
                 <div class="score">
-                    <p>Human: 0</p>
-                    <p>Computer: 0</p>
+                    <p>Human:  0</p>
+                    <p>Computer:  0</p>
                 </div>
+                
+                <p class="winner-text">You Win!</p>
 
                 <div class="preview-img">
                     <div class="img-container">
-                        <img class="human-illus border" src="">
-                        <img class="computer-illus border" src="">
+                        <img class="human-illus border" src="images/rock.png">
+                        
+                        <div class="vs-container">
+                            <p class="vs-text"> vs.</p>
+                        </div>
+                        
+                        <img class="computer-illus border" src="images/scissors.png">
                     </div>
                 </div>
             </div>
@@ -39,12 +52,18 @@
             <div class="container">
 
                 <div class="choice-btn">
-                    <button>Rock</button>
-                    <button>Paper</button>
-                    <button>Scissors</button>
+                    <button class="rock">Rock</button>
+                    <button class="paper">Paper</button>
+                    <button class="scissors">Scissors</button>
                 </div>
             </div>
 
+        </section>
+
+        <section class="proceed-section">
+            <div class="container">
+                <button class="proceed-button">Next Round</button>
+            </div>
         </section>
         
     </body>
