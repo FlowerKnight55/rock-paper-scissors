@@ -80,3 +80,19 @@ Pseudocode:
     ENDIF
 
 
+# New Update: Added UI to the game
+
+Adding interactive UI to the game with images that illustration of rock, paper, and scissors based on what you and the computer have selected.
+
+Images to be used:
+
+ 1. Rock Image by <a href="https://www.freepik.com/free-psd/hand-drawn-rock-formation_206468576.htm#fromView=search&page=1&position=23&uuid=b2c50176-522e-401b-9463-4ff61d1370ad">Image by freepik</a>
+
+ 2. Paper Image by <a href="https://www.freepik.com/free-vector/blank-vintage-scroll-paper_21302279.htm#fromView=search&page=1&position=30&uuid=e674b638-d1ec-4006-bd65-3594b94d8dad">Image by brgfx on Freepik</a>
+
+ 3. Scissors Image by <a href="https://www.freepik.com/free-vector/scissors-tool-icon_169503561.htm#fromView=search&page=2&position=0&uuid=a42698b7-905c-46c5-89eb-0984f3237f58">Image by studiogstock on Freepik</a>
+
+
+
+
+
