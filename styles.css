@@ -32,7 +32,7 @@ html{
 
 
 
-.preview-img .border{
+.preview-img .computer-border, .human-border{
     border: solid;
     border-color: white;
     background-color: #222736;
@@ -52,19 +52,19 @@ button{
     border-style: solid;
 }
 
-.rock{
+#rock{
     background-color: #bea68b;
     border-color: #7f6a5a;
 }
 
-.paper{
+#paper{
     background-color: #b57d5d;
     border: #d3a56e;
     
 }
 
 
-.scissors{
+#scissors{
     background-color: #e3a360;
     border-color: #d87a37;
 }
@@ -123,7 +123,7 @@ button{
 }
 
 
-.preview-img .border{
+.human-border, .computer-border{
     height: 180px;
     width: 180px;
 }
