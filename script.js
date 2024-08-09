@@ -5,70 +5,7 @@ let computerScore = 0;
 
 
 let count = 0;
-// function getHumanChoice(){
-    
-    
-//     let choicebtn = document.querySelector(".choice-btn");
-    
 
-
-//     return new Promise((resolve) => {
-
-
-//         //choicebtn.removeEventListener("click");
-
-
-//         choicebtn.addEventListener("click", (event) =>{
-//             count++
-//             console.log(count);
-//             let target = event.target;
-//             let humanImageBorder = document.querySelector(".human-border");
-//             let humanImage = document.createElement("img");
-//             let humanCreditLink = document.createElement("a");
-//             let humanContainer = document.querySelector(".human-img-info");
-//             console.log(humanContainer);
-        
-//             humanImage.classList.add("human-illus");
-//             humanCreditLink.classList.add("human-credits")
-    
-        
-//             switch(target.id){
-//                 case "rock":
-//                     humanImage.setAttribute("src", "images/rock.png");
-//                     humanImageBorder.appendChild(humanImage);
-//                     humanCreditLink.setAttribute("href", "https://www.freepik.com/free-psd/hand-drawn-rock-formation_206468576.htm#fromView=search&page=1&position=23&uuid=b2c50176-522e-401b-9463-4ff61d1370ad");
-//                     humanCreditLink.textContent = "Image by freepik";
-//                     humanContainer.appendChild(humanCreditLink);
-    
-//                     break;
-//                 case "paper":
-//                     humanImage.setAttribute("src", "images/paper.png");
-//                     humanImageBorder.appendChild(humanImage);
-//                     humanCreditLink.setAttribute("href","https://www.freepik.com/free-vector/blank-vintage-scroll-paper_21302279.htm#fromView=search&page=1&position=30&uuid=e674b638-d1ec-4006-bd65-3594b94d8dad");
-//                     humanCreditLink.textContent = "Image by brgfx on Freepik";
-//                     humanContainer.appendChild(humanCreditLink);
-    
-//                     break;
-//                 case "scissors":
-//                     humanImage.setAttribute("src", "images/scissors.png");
-//                     humanImageBorder.appendChild(humanImage);
-//                     humanCreditLink.setAttribute("href", "https://www.freepik.com/free-vector/scissors-tool-icon_169503561.htm#fromView=search&page=2&position=0&uuid=a42698b7-905c-46c5-89eb-0984f3237f58");
-//                     humanCreditLink.textContent = "Image by freepik";
-//                     humanContainer.appendChild(humanCreditLink);
-    
-//                     break;
-//             }
-    
-//            resolve(target.id);
-            
-//         })
-        
-        
-//     });
-
-    
-
-// }
 
 
 function getHumanChoice() {
@@ -130,13 +67,6 @@ function getHumanChoice() {
 
 
 
-
-
-
-
-
-
-
 function getComputerChoice(){
 
     return new Promise((resolve) =>{
@@ -190,17 +120,6 @@ function getComputerChoice(){
 }
 
 
-// async function enterChoice(){
-
-//     return new Promise((resolve) =>{
-        
-//     })
-
-//     let humanChoice = await getHumanChoice();
-//     let computerChoice = await getComputerChoice();
-
-//     await playRound(humanChoice, computerChoice);
-// }
 
 
 //Plays a round of the game after finish a game on to the next round.
@@ -267,14 +186,16 @@ function getNextRound(){
 
         const roundText = document.querySelector(".round-text");
 
+
+        
         if(round <= NUMBEROFGAMES){
             proceedButton.textContent = "Next Round";
             proceedContainer.appendChild(proceedButton);
             proceedSection.appendChild(proceedContainer);
             round++;
             
-            proceedButton.addEventListener("click", (event) =>{
-                
+
+            const callBack = () =>{
                 humanBorder.removeChild(humanImage);
                 humanImageInfo.removeChild(humanCreditLink);
 
@@ -284,8 +205,17 @@ function getNextRound(){
                 winnerText.textContent = "";
                 roundText.textContent = "Round: " + round;
 
-            })
+                proceedButton.removeEventListener("click", callBack);
+
+                proceedSection.removeChild(proceedContainer);
+            }
+
+
+            proceedButton.addEventListener("click", callBack);
+            
             resolve();
+
+            
 
         }
         else{
