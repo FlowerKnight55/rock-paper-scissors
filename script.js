@@ -154,12 +154,73 @@ function playRound(humanChoice, computerChoice){
         humanScoreboard.textContent = "You: " + humanScore;
         computerScoreboard.textContent = "Computer: " + computerScore;
 
-        
-        
+        resolve();
     })
 
 }
 
+
+function getNextRound(callback){
+
+    return new Promise((resolve) =>{
+        const proceedSection = document.querySelector(".proceed-section");
+        const proceedContainer = document.createElement("div");
+        const proceedButton = document.createElement("button")
+        proceedButton.classList.add("proceed-button");
+        proceedContainer.classList.add("container");
+
+        const humanImageInfo = document.querySelector(".human-img-info");
+        const computerImageInfo = document.querySelector(".computer-img-info");
+
+        const humanBorder = document.querySelector(".human-border");
+        const computerBorder = document.querySelector(".computer-border");
+        
+        const humanImage = document.querySelector(".human-illus");
+        const computerImage = document.querySelector(".computer-illus");
+
+        const humanCreditLink = document.querySelector(".human-credits");
+        const computerCreditLink = document.querySelector(".computer-credits");
+
+        const winnerText = document.querySelector(".winner-text");
+
+        const roundText = document.querySelector(".round-text");
+
+        if(round <= NUMBEROFGAMES){
+            proceedButton.textContent = "Next Round";
+            proceedContainer.appendChild(proceedButton);
+            proceedSection.appendChild(proceedContainer);
+            round++;
+            
+            proceedButton.addEventListener("click", (event) =>{
+                
+                humanBorder.removeChild(humanImage);
+                humanImageInfo.removeChild(humanCreditLink);
+
+                computerBorder.removeChild(computerImage);
+                computerImageInfo.removeChild(computerCreditLink);
+                
+                winnerText.textContent = "";
+                roundText.textContent = "Round: " + round;
+
+            })
+
+        }
+        else{
+            proceedButton.textContent = "New Game?";
+            proceedButton.textContent = "Next Round";
+            proceedContainer.appendChild(proceedButton);
+            proceedSection.appendChild(proceedContainer);
+            round = 0;
+
+        }
+
+
+
+
+    })
+
+
+}
 
 
 
@@ -167,7 +228,7 @@ function playRound(humanChoice, computerChoice){
 async function playGame(callback, currentRound){
     while(round <= currentRound){
         await enterChoice();
-        round++;
+        await getNextRound();
     }
     callback();
 }
@@ -185,7 +246,7 @@ function getFinalScore(){
 }
 
 
-playGame(getFinalScore, 5);
+playGame(getFinalScore, NUMBEROFGAMES);
 
 
 
