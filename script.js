@@ -183,12 +183,20 @@ function getNextRound(){
         const computerCreditLink = document.querySelector(".computer-credits");
 
         const winnerText = document.querySelector(".winner-text");
-
         const roundText = document.querySelector(".round-text");
 
 
         
-        if(round <= NUMBEROFGAMES){
+        if(round === NUMBEROFGAMES){
+            proceedButton.textContent = "New Game?";
+            proceedContainer.appendChild(proceedButton);
+            proceedSection.appendChild(proceedContainer);
+            round = 0;
+
+            
+
+        }
+        else{
             proceedButton.textContent = "Next Round";
             proceedContainer.appendChild(proceedButton);
             proceedSection.appendChild(proceedContainer);
@@ -213,28 +221,15 @@ function getNextRound(){
 
             proceedButton.addEventListener("click", callBack);
             
-            resolve();
-
-            
-
-        }
-        else{
-            proceedButton.textContent = "New Game?";
-            proceedButton.textContent = "Next Round";
-            proceedContainer.appendChild(proceedButton);
-            proceedSection.appendChild(proceedContainer);
-            round = 0;
-
-        }
-
         
+
+        }
+
+        resolve();
     })
 
 
 }
-
-
-
 
 
 function getFinalScore(){
@@ -248,6 +243,7 @@ function getFinalScore(){
         console.log("Computer Wins!");
     }
 }
+
 
 //Play a game for 5 rounds
 async function playGame(currentRound){
