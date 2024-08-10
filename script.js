@@ -258,8 +258,11 @@ function getFinalScore(roundText){
     
 
     //Decides who is the winner at the end of the 5 rounds
-    if(humanScore > computerScore){
-        roundText.textContent = "You Win!";
+    if(humanScore === computerScore){
+        roundText.textContent = "It's a draw!";
+    }
+    else if(humanScore > computerScore){
+        roundText.textContent = "You win!";
     }
     else{
         roundText.textContent = "Computer wins!";
