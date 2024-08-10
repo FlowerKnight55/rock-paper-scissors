@@ -83,6 +83,7 @@ function getComputerChoice(){
                 computerImage.setAttribute("src", "images/rock.png");
                 computerImageBorder.appendChild(computerImage);
                 computerCreditLink.setAttribute("href", "https://www.freepik.com/free-psd/hand-drawn-rock-formation_206468576.htm#fromView=search&page=1&position=23&uuid=b2c50176-522e-401b-9463-4ff61d1370ad");
+                computerCreditLink.setAttribute("target", "_blank");
                 computerCreditLink.textContent = "Image by freepik";
                 computerContainer.appendChild(computerCreditLink);
                 value = "rock"
@@ -91,6 +92,7 @@ function getComputerChoice(){
                 computerImage.setAttribute("src", "images/paper.png");
                 computerImageBorder.appendChild(computerImage);
                 computerCreditLink.setAttribute("href","https://www.freepik.com/free-vector/torn-paper-piece-design-background-vector_24611015.htm#fromView=search&page=1&position=46&uuid=a97623e4-c5e3-411a-a742-b98bd1b2efed");
+                computerCreditLink.setAttribute("target", "_blank");
                 computerCreditLink.textContent = "Image by Image by Creative_hat on Freepik";
                 computerContainer.appendChild(computerCreditLink);
                 value = "paper"
@@ -99,6 +101,7 @@ function getComputerChoice(){
                 computerImage.setAttribute("src", "images/scissors.png");
                 computerImageBorder.appendChild(computerImage);
                 computerCreditLink.setAttribute("href", "https://www.freepik.com/free-vector/scissors-tool-icon_169503561.htm#fromView=search&page=2&position=0&uuid=a42698b7-905c-46c5-89eb-0984f3237f58");
+                computerCreditLink.setAttribute("target", "_blank");
                 computerCreditLink.textContent = "Image by freepik";
                 computerContainer.appendChild(computerCreditLink);
                 value = "scissors";
