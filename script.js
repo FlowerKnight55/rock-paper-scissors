@@ -27,6 +27,7 @@ function getHumanChoice() {
                     humanImage.setAttribute("src", "images/rock.png");
                     humanImageBorder.appendChild(humanImage);
                     humanCreditLink.setAttribute("href", "https://www.freepik.com/free-psd/hand-drawn-rock-formation_206468576.htm#fromView=search&page=1&position=23&uuid=b2c50176-522e-401b-9463-4ff61d1370ad");
+                    humanCreditLink.setAttribute("target", "_blank");
                     humanCreditLink.textContent = "Image by freepik";
                     humanContainer.appendChild(humanCreditLink);
                     break;
@@ -34,6 +35,7 @@ function getHumanChoice() {
                     humanImage.setAttribute("src", "images/paper.png");
                     humanImageBorder.appendChild(humanImage);
                     humanCreditLink.setAttribute("href", "https://www.freepik.com/free-vector/blank-vintage-scroll-paper_21302279.htm#fromView=search&page=1&position=30&uuid=e674b638-d1ec-4006-bd65-3594b94d8dad");
+                    humanCreditLink.setAttribute("target", "_blank");
                     humanCreditLink.textContent = "Image by brgfx on Freepik";
                     humanContainer.appendChild(humanCreditLink);
                     break;
@@ -41,6 +43,7 @@ function getHumanChoice() {
                     humanImage.setAttribute("src", "images/scissors.png");
                     humanImageBorder.appendChild(humanImage);
                     humanCreditLink.setAttribute("href", "https://www.freepik.com/free-vector/scissors-tool-icon_169503561.htm#fromView=search&page=2&position=0&uuid=a42698b7-905c-46c5-89eb-0984f3237f58");
+                    humanCreditLink.setAttribute("target", "_blank");
                     humanCreditLink.textContent = "Image by freepik";
                     humanContainer.appendChild(humanCreditLink);
                     break;
@@ -86,6 +89,7 @@ function getComputerChoice(){
                 computerCreditLink.setAttribute("target", "_blank");
                 computerCreditLink.textContent = "Image by freepik";
                 computerContainer.appendChild(computerCreditLink);
+                console.log(computerCreditLink);
                 value = "rock"
                 break;
             case 1:
