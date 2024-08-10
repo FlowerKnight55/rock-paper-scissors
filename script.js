@@ -2,7 +2,7 @@ const NUMBEROFGAMES = 5;
 let round = 1;
 let humanScore = 0;
 let computerScore = 0;
-
+let newGame = false;
 
 
 
@@ -154,14 +154,6 @@ function playRound(humanChoice, computerChoice){
 
 }
 
-
-function checkOverallWinner(){
-
-
-
-}
-
-
 async function getNextRound(){
 
     return new Promise((resolve) =>{
@@ -186,16 +178,43 @@ async function getNextRound(){
         const winnerText = document.querySelector(".winner-text");
         const roundText = document.querySelector(".round-text");
 
+        const humanScoreboard = document.querySelector(".human-scoreboard");
+        const computerScoreboard = document.querySelector(".computer-scoreboard");
+
+        const resetGame = () =>{
+            humanBorder.removeChild(humanImage);
+            humanImageInfo.removeChild(humanCreditLink);
+
+            computerBorder.removeChild(computerImage);
+            computerImageInfo.removeChild(computerCreditLink);
+            
+            winnerText.textContent = "";
+            roundText.textContent = "Round: " + round;
+
+            proceedButton.removeEventListener("click", resetGame);
+            proceedSection.removeChild(proceedContainer);
+
+            if(newGame === true){
+                humanScoreboard.textContent = "You: 0";
+                computerScoreboard.textContent = "Computer: 0";
+            }
+
+        }
 
         
         if(round === NUMBEROFGAMES){
             proceedButton.textContent = "New Game?";
             proceedContainer.appendChild(proceedButton);
             proceedSection.appendChild(proceedContainer);
-            round = 0;
+            round = 1;
             
             winnerText.textContent = "";
             getFinalScore(roundText);
+
+            newGame = true;
+
+            proceedButton.addEventListener("click", resetGame);
+
             
         }
         else{
@@ -203,25 +222,8 @@ async function getNextRound(){
             proceedContainer.appendChild(proceedButton);
             proceedSection.appendChild(proceedContainer);
             round++;
-            
 
-            const callBack = () =>{
-                humanBorder.removeChild(humanImage);
-                humanImageInfo.removeChild(humanCreditLink);
-
-                computerBorder.removeChild(computerImage);
-                computerImageInfo.removeChild(computerCreditLink);
-                
-                winnerText.textContent = "";
-                roundText.textContent = "Round: " + round;
-
-                proceedButton.removeEventListener("click", callBack);
-
-                proceedSection.removeChild(proceedContainer);
-            }
-
-
-            proceedButton.addEventListener("click", callBack);
+            proceedButton.addEventListener("click", resetGame);
             
         
 
@@ -240,10 +242,8 @@ function getFinalScore(roundText){
     //Decides who is the winner at the end of the 5 rounds
     if(humanScore > computerScore){
         roundText.textContent = "You Win!";
-
     }
     else{
-
         roundText.textContent = "Computer wins!";
     }
 }
