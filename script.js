@@ -36,7 +36,7 @@ function getHumanChoice() {
                     humanImageBorder.appendChild(humanImage);
                     humanCreditLink.setAttribute("href", "https://www.freepik.com/free-vector/blank-vintage-scroll-paper_21302279.htm#fromView=search&page=1&position=30&uuid=e674b638-d1ec-4006-bd65-3594b94d8dad");
                     humanCreditLink.setAttribute("target", "_blank");
-                    humanCreditLink.textContent = "Image by brgfx on Freepik";
+                    humanCreditLink.textContent = "Image by Creative_hat";
                     humanContainer.appendChild(humanCreditLink);
                     break;
                 case "scissors":
@@ -96,7 +96,7 @@ function getComputerChoice(){
                 computerImageBorder.appendChild(computerImage);
                 computerCreditLink.setAttribute("href","https://www.freepik.com/free-vector/torn-paper-piece-design-background-vector_24611015.htm#fromView=search&page=1&position=46&uuid=a97623e4-c5e3-411a-a742-b98bd1b2efed");
                 computerCreditLink.setAttribute("target", "_blank");
-                computerCreditLink.textContent = "Image by Image by Creative_hat on Freepik";
+                computerCreditLink.textContent = "Image by Creative_hat";
                 computerContainer.appendChild(computerCreditLink);
                 value = "paper"
                 break;
@@ -186,9 +186,14 @@ async function getNextRound(){
         const humanScoreboard = document.querySelector(".human-scoreboard");
         const computerScoreboard = document.querySelector(".computer-scoreboard");
 
-        const individualButton = document.querySelector("#rock, #scissors, #paper");
+        const rockButton = document.querySelector("#rock");
+        const paperButton = document.querySelector("#paper");
+        const scissorsButton = document.querySelector("#scissors");
 
-        individualButton.disabled = true;
+
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
         
 
         //Executes if you want to proceed to next round or a new game
@@ -202,8 +207,9 @@ async function getNextRound(){
             winnerText.textContent = "";
             roundText.textContent = "Round: " + round;
 
-            individualButton.disabled = false;
-            
+            rockButton.disabled = false;
+            paperButton.disabled = false;
+            scissorsButton.disabled = false;
 
             proceedButton.removeEventListener("click", resetGame);
             proceedSection.removeChild(proceedContainer);
