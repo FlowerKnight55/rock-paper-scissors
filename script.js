@@ -4,8 +4,6 @@ let humanScore = 0;
 let computerScore = 0;
 
 
-let count = 0;
-
 
 
 function getHumanChoice() {
@@ -16,14 +14,11 @@ function getHumanChoice() {
 
         // Define the event listener function separately
         function handleClick(event) {
-            count++;
-            console.log(count);
             let target = event.target;
             let humanImageBorder = document.querySelector(".human-border");
             let humanImage = document.createElement("img");
             let humanCreditLink = document.createElement("a");
             let humanContainer = document.querySelector(".human-img-info");
-            console.log(humanContainer);
 
             humanImage.classList.add("human-illus");
             humanCreditLink.classList.add("human-credits");
@@ -90,7 +85,6 @@ function getComputerChoice(){
                 computerImageBorder.appendChild(computerImage);
                 computerCreditLink.setAttribute("href", "https://www.freepik.com/free-psd/hand-drawn-rock-formation_206468576.htm#fromView=search&page=1&position=23&uuid=b2c50176-522e-401b-9463-4ff61d1370ad");
                 computerCreditLink.textContent = "Image by freepik";
-                console.log(computerContainer);
                 computerContainer.appendChild(computerCreditLink);
                 value = "rock"
                 break;
@@ -161,7 +155,14 @@ function playRound(humanChoice, computerChoice){
 }
 
 
-function getNextRound(){
+function checkOverallWinner(){
+
+
+
+}
+
+
+async function getNextRound(){
 
     return new Promise((resolve) =>{
         const proceedSection = document.querySelector(".proceed-section");
@@ -192,9 +193,10 @@ function getNextRound(){
             proceedContainer.appendChild(proceedButton);
             proceedSection.appendChild(proceedContainer);
             round = 0;
-
             
-
+            winnerText.textContent = "";
+            getFinalScore(roundText);
+            
         }
         else{
             proceedButton.textContent = "Next Round";
@@ -232,15 +234,17 @@ function getNextRound(){
 }
 
 
-function getFinalScore(){
-    console.log("Final Score: ");
-    console.log("Human Score: " + humanScore + " - " + "Computer Score: " + computerScore);
+function getFinalScore(roundText){
+    
+
     //Decides who is the winner at the end of the 5 rounds
     if(humanScore > computerScore){
-        console.log("Human Wins!");
+        roundText.textContent = "You Win!";
+
     }
     else{
-        console.log("Computer Wins!");
+
+        roundText.textContent = "Computer wins!";
     }
 }
 
@@ -254,7 +258,7 @@ async function playGame(currentRound){
         await playRound(humanChoice, computerChoice);
         await getNextRound();
     }
-    await getFinalScore();
+    
 }
 
 
