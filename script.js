@@ -90,8 +90,8 @@ function getComputerChoice(){
             case 1:
                 computerImage.setAttribute("src", "images/paper.png");
                 computerImageBorder.appendChild(computerImage);
-                computerCreditLink.setAttribute("href","https://www.freepik.com/free-vector/blank-vintage-scroll-paper_21302279.htm#fromView=search&page=1&position=30&uuid=e674b638-d1ec-4006-bd65-3594b94d8dad");
-                computerCreditLink.textContent = "Image by brgfx on Freepik";
+                computerCreditLink.setAttribute("href","https://www.freepik.com/free-vector/torn-paper-piece-design-background-vector_24611015.htm#fromView=search&page=1&position=46&uuid=a97623e4-c5e3-411a-a742-b98bd1b2efed");
+                computerCreditLink.textContent = "Image by Image by Creative_hat on Freepik";
                 computerContainer.appendChild(computerCreditLink);
                 value = "paper"
                 break;
