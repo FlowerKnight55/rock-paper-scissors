@@ -89,7 +89,6 @@ function getComputerChoice(){
                 computerCreditLink.setAttribute("target", "_blank");
                 computerCreditLink.textContent = "Image by freepik";
                 computerContainer.appendChild(computerCreditLink);
-                console.log(computerCreditLink);
                 value = "rock"
                 break;
             case 1:
