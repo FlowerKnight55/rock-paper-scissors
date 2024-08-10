@@ -4,15 +4,13 @@ let humanScore = 0;
 let computerScore = 0;
 let newGame = false;
 
-
-
 function getHumanChoice() {
 
     let choicebtn = document.querySelector(".choice-btn");
 
     return new Promise((resolve) => {
 
-        // Define the event listener function separately
+        
         function handleClick(event) {
             let target = event.target;
             let humanImageBorder = document.querySelector(".human-border");
@@ -23,6 +21,7 @@ function getHumanChoice() {
             humanImage.classList.add("human-illus");
             humanCreditLink.classList.add("human-credits");
 
+            //Image will pop up based on the user button choice
             switch (target.id) {
                 case "rock":
                     humanImage.setAttribute("src", "images/rock.png");
@@ -53,7 +52,7 @@ function getHumanChoice() {
             choicebtn.removeEventListener("click", handleClick);
         }
 
-        // Attach the event listener
+        //Attach the event listener
         choicebtn.addEventListener("click", handleClick);
 
     });
@@ -113,9 +112,6 @@ function getComputerChoice(){
     
 }
 
-
-
-
 //Plays a round of the game after finish a game on to the next round.
 function playRound(humanChoice, computerChoice){
     
@@ -157,7 +153,10 @@ function playRound(humanChoice, computerChoice){
 async function getNextRound(){
 
     return new Promise((resolve) =>{
+
         const proceedSection = document.querySelector(".proceed-section");
+        
+        //This creates a button either Next round or New Game.
         const proceedContainer = document.createElement("div");
         const proceedButton = document.createElement("button")
         proceedButton.classList.add("proceed-button");
@@ -181,6 +180,12 @@ async function getNextRound(){
         const humanScoreboard = document.querySelector(".human-scoreboard");
         const computerScoreboard = document.querySelector(".computer-scoreboard");
 
+        const individualButton = document.querySelector("#rock, #scissors, #paper");
+
+        individualButton.disabled = true;
+        
+
+        //Executes if you want to proceed to next round or a new game
         const resetGame = () =>{
             humanBorder.removeChild(humanImage);
             humanImageInfo.removeChild(humanCreditLink);
@@ -190,6 +195,9 @@ async function getNextRound(){
             
             winnerText.textContent = "";
             roundText.textContent = "Round: " + round;
+
+            individualButton.disabled = false;
+            
 
             proceedButton.removeEventListener("click", resetGame);
             proceedSection.removeChild(proceedContainer);
@@ -201,7 +209,6 @@ async function getNextRound(){
 
         }
 
-        
         if(round === NUMBEROFGAMES){
             proceedButton.textContent = "New Game?";
             proceedContainer.appendChild(proceedButton);
@@ -225,8 +232,7 @@ async function getNextRound(){
 
             proceedButton.addEventListener("click", resetGame);
             
-        
-
+    
         }
 
         resolve();
